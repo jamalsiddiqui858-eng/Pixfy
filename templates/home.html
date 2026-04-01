@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<title>Pixfy - Image Tools</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<div class="wave"></div>
+
+<nav class="navbar">
+
+    <div class="logo">
+        <span class="pix">Pix</span><span class="fy">fy</span>
+    </div>
+
+    <ul class="menu">
+        <li>Home</li>
+        <li>Pricing</li>
+
+        {% if user_logged_in %}
+            <li>👤 {{ user_name }}</li>
+            <li><a href="/dashboard">Dashboard</a></li>
+            <li><a href="/logout">Logout</a></li>
+        {% else %}
+            <li><a href="/login">Login</a></li>
+            <li class="signup"><a href="/signup">Sign Up</a></li>
+        {% endif %}
+    </ul>
+
+</nav>
+
+<section class="hero">
+    <h1>All-in-One Image Tools</h1>
+    <p>Convert and manage your images easily with Pixfy</p>
+</section>
+
+<section class="tools">
+
+    <a href="/image-to-pdf" class="tool-card">
+        <div class="icon">🖼</div>
+        <h3>Image → PDF</h3>
+        <p>Convert images into PDF</p>
+    </a>
+
+    <a href="/split-image" class="tool-card">
+        <div class="icon">✂</div>
+        <h3>Split Image</h3>
+        <p>Split image into parts</p>
+    </a>
+
+    <a href="/compress-image" class="tool-card">
+        <div class="icon">📦</div>
+        <h3>Compress Image</h3>
+        <p>Reduce image size</p>
+    </a>
+
+    <a href="/merge-pdf" class="tool-card">
+        <div class="icon">📄</div>
+        <h3>Merge PDF</h3>
+        <p>Combine multiple PDFs</p>
+    </a>
+
+</section>
+
+<section class="pricing">
+
+    <h2>Pricing Plans</h2>
+
+    <div class="pricing-cards">
+
+        <div class="price-card">
+            <h3>Free</h3>
+            <p>1 tool / 24h</p>
+            <p>₹0</p>
+        </div>
+
+        <div class="price-card">
+            <h3>Pro</h3>
+            <p>50 tools / day</p>
+            <p>₹31 / month</p>
+        </div>
+
+        <div class="price-card">
+            <h3>Premium</h3>
+            <p>Unlimited tools</p>
+            <p>₹99 / month</p>
+        </div>
+
+    </div>
+
+</section>
+
+<div class="footer">
+    <p>© 2026 Pixfy</p>
+</div>
+
+</body>
+</html>
