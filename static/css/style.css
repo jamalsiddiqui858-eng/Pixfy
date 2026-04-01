@@ -1,0 +1,257 @@
+/* RESET */
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family: 'Poppins', sans-serif;
+}
+
+body{
+background:#0f172a;
+color:white;
+overflow-x:hidden;
+position:relative; /* ✅ FIX */
+z-index:0;
+scroll-behavior:smooth; /* ✅ smooth scroll */
+}
+
+/* ===== ANIMATED BACKGROUND ===== */
+
+body::before{
+content:"";
+position:fixed;
+width:200%;
+height:200%;
+background: linear-gradient(45deg,#2563eb,#ef4444,#9333ea,#06b6d4);
+animation: moveBg 15s linear infinite;
+z-index:-1; /* ✅ FIX */
+pointer-events:none; /* ✅ FIX */
+}
+
+@keyframes moveBg{
+0%{transform:translate(0,0);}
+50%{transform:translate(-25%,-25%);}
+100%{transform:translate(0,0);}
+}
+
+/* floating glow blobs */
+
+body::after{
+content:"";
+position:fixed;
+width:500px;
+height:500px;
+background:#2563eb;
+filter:blur(200px);
+top:20%;
+left:10%;
+z-index:-1;
+animation: float 8s infinite alternate;
+pointer-events:none; /* ✅ FIX */
+}
+
+@keyframes float{
+0%{transform:translate(0,0);}
+100%{transform:translate(200px,150px);}
+}
+
+
+/* NAVBAR */
+
+.navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 60px;
+backdrop-filter: blur(10px);
+-webkit-backdrop-filter: blur(10px); /* ✅ FIX */
+}
+
+.logo{
+font-size:28px;
+font-weight:bold;
+}
+
+.pix{color:#60a5fa;}
+.fy{color:#f87171;}
+
+.menu{
+display:flex;
+gap:25px;
+list-style:none;
+}
+
+.menu a{
+color:white;
+text-decoration:none;
+transition:0.3s;
+}
+
+.menu a:hover{
+color:#60a5fa;
+}
+
+
+/* HERO */
+
+.hero{
+text-align:center;
+margin-top:80px;
+animation: fadeUp 1s ease;
+}
+
+.hero h1{
+font-size:52px;
+background: linear-gradient(to right,#60a5fa,#f87171);
+-webkit-background-clip:text;
+color:transparent;
+}
+
+.hero p{
+color:#ccc;
+margin-top:10px;
+}
+
+/* animation */
+
+@keyframes fadeUp{
+from{
+opacity:0;
+transform:translateY(30px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+
+/* TOOLS */
+
+.tools{
+display:flex;
+justify-content:center;
+gap:30px;
+margin-top:70px;
+flex-wrap:wrap;
+}
+
+.tool-card{
+background:rgba(255,255,255,0.05);
+border:1px solid rgba(255,255,255,0.1);
+backdrop-filter:blur(15px);
+-webkit-backdrop-filter: blur(15px); /* ✅ FIX */
+padding:30px;
+border-radius:15px;
+width:250px;
+text-align:center;
+color:white;
+text-decoration:none;
+transition:0.4s;
+position:relative;
+overflow:hidden;
+}
+
+/* glow hover effect */
+
+.tool-card::before{
+content:"";
+position:absolute;
+width:100%;
+height:100%;
+background:linear-gradient(120deg,transparent,#ffffff33,transparent);
+top:-100%;
+left:0;
+transition:0.5s;
+}
+
+.tool-card:hover::before{
+top:100%;
+}
+
+.tool-card:hover{
+transform:translateY(-10px) scale(1.03);
+}
+
+.icon{
+font-size:40px;
+margin-bottom:10px;
+}
+
+
+/* PRICING */
+
+.pricing{
+text-align:center;
+margin-top:120px;
+}
+
+.pricing-cards{
+display:flex;
+justify-content:center;
+gap:30px;
+margin-top:30px;
+flex-wrap:wrap;
+}
+
+.price-card{
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(10px);
+-webkit-backdrop-filter: blur(10px); /* ✅ FIX */
+padding:25px;
+border-radius:12px;
+width:220px;
+transition:0.3s;
+border:1px solid rgba(255,255,255,0.1);
+}
+
+.price-card:hover{
+transform:scale(1.05);
+}
+
+.price-card span{
+color:#22c55e;
+font-weight:bold;
+}
+
+
+/* TOOL BOX */
+
+.tool-box{
+width:320px;
+margin:120px auto;
+padding:30px;
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(15px);
+-webkit-backdrop-filter: blur(15px); /* ✅ FIX */
+border-radius:12px;
+text-align:center;
+}
+
+.tool-box input{
+margin:10px 0;
+}
+
+.tool-box button{
+padding:10px 20px;
+background:#2563eb;
+border:none;
+color:white;
+cursor:pointer;
+border-radius:5px;
+transition:0.3s;
+}
+
+.tool-box button:hover{
+background:#1d4ed8;
+}
+
+
+/* FOOTER */
+
+.footer{
+text-align:center;
+margin-top:100px;
+padding:20px;
+color:#aaa;
+}
