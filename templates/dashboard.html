@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Dashboard - Pixfy</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+
+<div class="logo">
+<span class="pix">Pix</span><span class="fy">fy</span>
+</div>
+
+<ul class="menu">
+<li><a href="/">Home</a></li>
+<li><a href="/logout">Logout</a></li>
+</ul>
+
+</div>
+
+
+<!-- HERO -->
+<section class="hero">
+
+<h1>Welcome, {{ user_name }} 👋</h1>
+<p>Your personal Pixfy dashboard</p>
+
+</section>
+
+
+<!-- TOOLS -->
+<section class="tools">
+
+<a href="/image-to-pdf" class="tool-card">
+<div class="icon">🖼</div>
+<h3>Image → PDF</h3>
+<p>Convert images into PDF</p>
+</a>
+
+<a href="/compress-image" class="tool-card">
+<div class="icon">📦</div>
+<h3>Compress Image</h3>
+<p>Reduce image size</p>
+</a>
+
+<a href="/split-image" class="tool-card">
+<div class="icon">✂</div>
+<h3>Split Image</h3>
+<p>Split image into parts</p>
+</a>
+
+<a href="/merge-pdf" class="tool-card">
+<div class="icon">📄</div>
+<h3>Merge PDF</h3>
+<p>Combine multiple PDFs</p>
+</a>
+
+</section>
+
+<section class="pricing">
+
+<h2>Your Plan</h2>
+
+<div class="pricing-cards">
+
+<div class="price-card">
+<h3>Free</h3>
+<p>1 tool / 24h</p>
+
+{% if user_plan == "free" %}
+    <span>Current</span>
+{% else %}
+    <a href="/upgrade/free">Switch</a>
+{% endif %}
+
+</div>
+
+<div class="price-card">
+<h3>Pro</h3>
+<p>50 tools / day</p>
+<p>₹31 / month</p>
+
+{% if user_plan == "pro" %}
+    <span>Current</span>
+{% else %}
+    <a href="/upgrade/pro">Upgrade</a>
+{% endif %}
+
+</div>
+
+<div class="price-card">
+<h3>Premium</h3>
+<p>Unlimited tools</p>
+<p>₹99 / month</p>
+
+{% if user_plan == "premium" %}
+    <span>Current</span>
+{% else %}
+    <a href="/upgrade/premium">Upgrade</a>
+{% endif %}
+
+</div>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+<div class="footer">
+<p>© 2026 Pixfy Dashboard</p>
+</div>
+
+</body>
+</html>

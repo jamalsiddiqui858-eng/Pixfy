@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Compress Image</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<div class="animated-bg"></div>
+
+<div class="tool-box">
+<h2>Compress Image</h2>
+
+<form method="POST" enctype="multipart/form-data">
+<input type="file" name="image" required>
+<button>Compress</button>
+</form>
+
+</div>
+
+</body>
+</html>

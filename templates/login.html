@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Login - Pixfy</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+<style>
+
+body{
+background:black;
+font-family:Arial;
+overflow:hidden;
+}
+
+/* animated gradient */
+
+.bg{
+position:absolute;
+width:500px;
+height:500px;
+background:radial-gradient(circle,#2563eb,#ef4444);
+filter:blur(150px);
+animation:move 8s infinite alternate;
+}
+
+@keyframes move{
+0%{top:10%;left:10%;}
+100%{top:60%;left:60%;}
+}
+
+/* login card */
+
+.login-card{
+position:relative;
+width:350px;
+margin:120px auto;
+padding:40px;
+background:rgba(255,255,255,0.05);
+border-radius:10px;
+backdrop-filter:blur(10px);
+text-align:center;
+color:white;
+}
+
+.logo{
+font-size:28px;
+font-weight:bold;
+}
+
+.pix{
+color:#2563eb;
+}
+
+.fy{
+color:#ef4444;
+}
+
+input{
+width:100%;
+padding:10px;
+margin:10px 0;
+border:none;
+border-radius:5px;
+}
+
+button{
+width:100%;
+padding:10px;
+background:#ef4444;
+color:white;
+border:none;
+cursor:pointer;
+}
+
+a{
+color:white;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="bg"></div>
+
+<div class="login-card">
+
+<div class="logo">
+<span class="pix">Pix</span><span class="fy">fy</span>
+</div>
+
+<h2>Login</h2>
+
+<form method="POST">
+
+<input type="email" name="email" placeholder="Email" required>
+
+<input type="password" name="password" placeholder="Password" required>
+
+<button type="submit">Login</button>
+
+</form>
+
+<p>Don't have account?</p>
+
+<a href="/signup">Sign Up</a>
+
+</div>
+
+</body>
+</html>
