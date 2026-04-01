@@ -1,0 +1,6 @@
+flask
+img2pdf
+pillow
+PyPDF2
+gunicorn
+werkzeug
